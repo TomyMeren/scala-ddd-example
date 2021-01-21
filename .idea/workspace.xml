@@ -23,73 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7859f54-9bdc-4e12-8477-abfca093634f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalamock_scalamock_2_12_4_0_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/controller/courses/CoursePostController.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/application/create/CourseCreator.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/domain/CourseRepository.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/infraestructure/repository/InMemoryCourseRepository.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/domain/UserRepository.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/infrastructure/repository/InMemoryUserRepository.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/domain/DurationStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/domain/IntStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/domain/StringStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/domain/UuidStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/IntegrationTestCase.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/UnitTestCase.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/application/create/CourseCreatorTest.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/application/search/CourseSearcherTest.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseIdStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseTeacherStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/infrastructure/CourseIntegrationTestCase.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/infrastructure/CourseUnitTestCase.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/infrastructure/repository/InMemoryCourseRepositoryTest.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/application/UserSearcherTest.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/domain/UserIdStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/domain/UserNameStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/infrastructure/UserIntegrationTestCase.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/infrastructure/UserUnitTestCase.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/infrastructure/repository/InMemoryUserRepositoryTest.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/application/create/VideoCreatorTest.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/application/search/VideoSearcherTest.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoCategoryStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoDurationStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoIdStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoTitleStub.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/infrastructure/VideoIntegrationTestCase.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/infrastructure/VideoUnitTestCase.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/infrastructure/repository/InMemoryVideoRepositoryTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Scala HTTP API.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Scala HTTP API.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Dependencies.scala" beforeDir="false" afterPath="$PROJECT_DIR$/project/Dependencies.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/EntryPointDependencyContainer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/EntryPointDependencyContainer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/Routes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/Routes.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/controller/courses/CourseGetController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/controller/courses/CourseGetController.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/application/CourseSearcher.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/application/search/CourseSearcher.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/domain/CourseTeacherName.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/domain/CourseTeacherName.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/infraestructure/dependency_injection/CourseModuleDependencyContainer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/infraestructure/dependency_injection/CourseModuleDependencyContainer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/application/UserSearcher.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/application/UserSearcher.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/infrastructure/dependency_injection/UserModuleDependecyContainer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/infrastructure/dependency_injection/UserModuleDependecyContainer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/video/application/create/VideoCreator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/video/application/create/VideoCreator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/ScalaHttpApiTest.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/entry_point/CourseSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/entry_point/CourseSpec.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/entry_point/UserSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/entry_point/UserSpec.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/video/infrastructure/repository/InMemoryVideoRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/video/infrastructure/repository/InMemoryVideoRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/domain/DurationStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/shared/domain/DurationStub.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/domain/IntStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/shared/domain/IntStub.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/domain/StringStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/shared/domain/StringStub.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/domain/UuidStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/shared/domain/UuidStub.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/entry_point/VideoSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/entry_point/VideoSpec.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/infrastructure/stub/CourseIdStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/infrastructure/stub/CourseStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/infrastructure/stub/CourseTeacherStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/infrastructure/stub/UserIdStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/infrastructure/stub/UserNameStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/infrastructure/stub/UserStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/domain/UserStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/infrastructure/stub/VideoCategoryStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/infrastructure/stub/VideoDurationStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/infrastructure/stub/VideoIdStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/infrastructure/stub/VideoStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/infrastructure/stub/VideoTitleStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/shared/infrastructure/stub/DurationStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/shared/infrastructure/stub/IntStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/shared/infrastructure/stub/StringStub.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/shared/infrastructure/stub/UuidStub.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseIdStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseIdStub.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseTeacherStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseTeacherStub.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/domain/UserIdStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/domain/UserIdStub.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/domain/UserNameStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/domain/UserNameStub.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoCategoryStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoCategoryStub.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoDurationStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoDurationStub.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoIdStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoIdStub.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoTitleStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoTitleStub.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +81,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -145,47 +95,7 @@
       <recent name="tv.codely.scala_http_api.entry_point.controller.user" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.InMemoryCourseRepositoryTest">
-    <configuration name="CourseCreatorTest.Crete course should Obtain all courses" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="Scala HTTP API" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="selectedOptions">
-        <set />
-      </option>
-      <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="tv.codely.scala_http_api.module.courses.application.create.CourseCreatorTest" />
-      <option name="testName" value="Crete course should Obtain all courses" />
-      <option name="workingDirectory" value="C:\Users\tmerendo\Desktop\Scala\codelyTV\scala-ddd-example" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CourseSearcherTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="Scala HTTP API" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="selectedOptions">
-        <set />
-      </option>
-      <option name="testKind" value="Class" />
-      <option name="testClassPath" value="tv.codely.scala_http_api.module.courses.application.search.CourseSearcherTest" />
-      <option name="workingDirectory" value="C:\Users\tmerendo\Desktop\Scala\codelyTV\scala-ddd-example" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CourseSpec" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="Scala HTTP API" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="selectedOptions">
-        <set />
-      </option>
-      <option name="testKind" value="Class" />
-      <option name="testClassPath" value="tv.codely.scala_http_api.entry_point.CourseSpec" />
-      <option name="workingDirectory" value="C:\Users\tmerendo\Desktop\Scala\codelyTV\scala-ddd-example" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="ScalaTest.VideoSpec">
     <configuration name="InMemoryCourseRepositoryTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="Scala HTTP API" />
       <option name="allowRunningInParallel" value="false" />
@@ -199,15 +109,55 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InMemoryVideoRepositoryTest.Video repository test should insert and search de test" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="VideoCreatorTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="Scala HTTP API" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <option name="testKind" value="Class" />
+      <option name="testClassPath" value="tv.codely.scala_http_api.module.video.application.create.VideoCreatorTest" />
+      <option name="workingDirectory" value="C:\Users\tmerendo\Desktop\Scala\codelyTV\scala-ddd-example" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VideoSpec" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="Scala HTTP API" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <option name="testKind" value="Class" />
+      <option name="testClassPath" value="tv.codely.scala_http_api.entry_point.VideoSpec" />
+      <option name="workingDirectory" value="C:\Users\tmerendo\Desktop\Scala\codelyTV\scala-ddd-example" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VideoSpec.post a video" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="Scala HTTP API" />
       <option name="allowRunningInParallel" value="false" />
       <option name="selectedOptions">
         <set />
       </option>
       <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="tv.codely.scala_http_api.module.video.infrastructure.repository.InMemoryVideoRepositoryTest" />
-      <option name="testName" value="Video repository test should insert and search de test" />
+      <option name="testClassPath" value="tv.codely.scala_http_api.entry_point.VideoSpec" />
+      <option name="testName" value="post a video" />
+      <option name="workingDirectory" value="C:\Users\tmerendo\Desktop\Scala\codelyTV\scala-ddd-example" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VideoSpec.return all the system videos" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="Scala HTTP API" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="tv.codely.scala_http_api.entry_point.VideoSpec" />
+      <option name="testName" value="return all the system videos" />
       <option name="workingDirectory" value="C:\Users\tmerendo\Desktop\Scala\codelyTV\scala-ddd-example" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -215,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="ScalaTest.VideoSpec" />
+        <item itemvalue="ScalaTest.VideoSpec.return all the system videos" />
+        <item itemvalue="ScalaTest.VideoSpec.post a video" />
+        <item itemvalue="ScalaTest.VideoCreatorTest" />
         <item itemvalue="ScalaTest.InMemoryCourseRepositoryTest" />
-        <item itemvalue="ScalaTest.CourseSearcherTest" />
-        <item itemvalue="ScalaTest.CourseSpec" />
-        <item itemvalue="ScalaTest.CourseCreatorTest.Crete course should Obtain all courses" />
-        <item itemvalue="ScalaTest.InMemoryVideoRepositoryTest.Video repository test should insert and search de test" />
       </list>
     </recent_temporary>
   </component>
@@ -247,10 +197,10 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="721" y="295" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611159883087" />
-    <state x="475" y="464" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1611159810226">
+    <state x="475" y="464" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1611224896214">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="475" y="464" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611159810226" />
+    <state x="475" y="464" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611224896214" />
     <state x="769" y="409" width="551" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1611156776622">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -263,25 +213,45 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="476" y="221" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611153724760" />
-    <state width="1815" height="295" key="GridCell.Tab.0.bottom" timestamp="1611219818719">
+    <state x="771" y="295" key="FileChooserDialogImpl" timestamp="1611224851843">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1815" height="295" key="GridCell.Tab.0.bottom/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611219818719" />
-    <state width="1815" height="295" key="GridCell.Tab.0.center" timestamp="1611219818719">
+    <state x="771" y="295" key="FileChooserDialogImpl/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611224851843" />
+    <state width="1815" height="416" key="GridCell.Tab.0.bottom" timestamp="1611225772535">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1815" height="295" key="GridCell.Tab.0.center/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611219818719" />
-    <state width="1815" height="295" key="GridCell.Tab.0.left" timestamp="1611219818719">
+    <state width="1815" height="416" key="GridCell.Tab.0.bottom/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611225772535" />
+    <state width="1815" height="416" key="GridCell.Tab.0.center" timestamp="1611225772535">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1815" height="295" key="GridCell.Tab.0.left/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611219818719" />
-    <state width="1815" height="295" key="GridCell.Tab.0.right" timestamp="1611219818719">
+    <state width="1815" height="416" key="GridCell.Tab.0.center/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611225772535" />
+    <state width="1815" height="416" key="GridCell.Tab.0.left" timestamp="1611225772535">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1815" height="295" key="GridCell.Tab.0.right/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611219818719" />
-    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1611076257322">
+    <state width="1815" height="416" key="GridCell.Tab.0.left/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611225772535" />
+    <state width="1815" height="416" key="GridCell.Tab.0.right" timestamp="1611225772535">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611076257322" />
+    <state width="1815" height="416" key="GridCell.Tab.0.right/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611225772535" />
+    <state width="1815" height="364" key="GridCell.Tab.1.bottom" timestamp="1611225654112">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.1.bottom/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611225654112" />
+    <state width="1815" height="364" key="GridCell.Tab.1.center" timestamp="1611225654112">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.1.center/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611225654112" />
+    <state width="1815" height="364" key="GridCell.Tab.1.left" timestamp="1611225654112">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.1.left/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611225654112" />
+    <state width="1815" height="364" key="GridCell.Tab.1.right" timestamp="1611225654112">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.1.right/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611225654112" />
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1611225799543">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611225799543" />
   </component>
 </project>

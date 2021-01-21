@@ -1,6 +1,6 @@
 package tv.codely.scala_http_api.module.courses.domain
 
-import tv.codely.scala_http_api.domain.StringStub
+import tv.codely.scala_http_api.module.shared.domain.StringStub
 
 object CourseTeacherStub {
   def apply(name: String) = CourseTeacherName(name)

@@ -1,6 +1,6 @@
 package tv.codely.scala_http_api.module.video.domain
 
-import tv.codely.scala_http_api.domain.{IntStub, StringStub}
+import tv.codely.scala_http_api.module.shared.domain.{IntStub, StringStub}
 
 object VideoTitleStub {
   private val minimumChars = 1

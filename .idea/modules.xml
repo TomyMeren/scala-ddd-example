@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Scala HTTP API.iml" filepath="$PROJECT_DIR$/.idea/modules/Scala HTTP API.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Scala HTTP API-build.iml" filepath="$PROJECT_DIR$/.idea/modules/Scala HTTP API-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/scala-ddd-example.iml" filepath="$PROJECT_DIR$/.idea/scala-ddd-example.iml" />
     </modules>
   </component>
 </project>
