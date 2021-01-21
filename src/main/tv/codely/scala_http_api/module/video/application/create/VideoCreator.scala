@@ -6,6 +6,7 @@ final class VideoCreator(repository: VideoRepository) {
 
   def create(id:VideoId, title:VideoTitle, duration:VideoDuration, category: VideoCategory):Unit = {
     val video = Video(id, title,duration,category)
+
     repository.save(video)
   }
 }

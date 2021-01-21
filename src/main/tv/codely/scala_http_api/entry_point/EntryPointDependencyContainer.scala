@@ -1,6 +1,6 @@
 package tv.codely.scala_http_api.entry_point
 
-import tv.codely.scala_http_api.entry_point.controller.courses.CourseGetController
+import tv.codely.scala_http_api.entry_point.controller.courses.{CourseGetController, CoursePostController}
 import tv.codely.scala_http_api.entry_point.controller.status.StatusGetController
 import tv.codely.scala_http_api.entry_point.controller.user.UserGetController
 import tv.codely.scala_http_api.entry_point.controller.video.{VideoGetController, VideoPostController}
@@ -22,4 +22,6 @@ final class EntryPointDependencyContainer(
   val courseGetController = new CourseGetController(courseDependencies.courseSearcher)
 
   val videoPostController = new VideoPostController(videoDependecies.videoCreator)
+
+  val coursePostController = new CoursePostController(courseDependencies.courseCreator)
 }

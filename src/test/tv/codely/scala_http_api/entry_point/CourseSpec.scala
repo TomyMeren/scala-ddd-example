@@ -2,8 +2,8 @@ package tv.codely.scala_http_api.entry_point
 
 import akka.http.scaladsl.model.{ContentTypes, StatusCodes}
 import spray.json._
+import tv.codely.scala_http_api.module.courses.domain.CourseStub
 import tv.codely.scala_http_api.module.courses.infrastructure.marshaller.CourseMarshaller
-import tv.codely.scala_http_api.module.courses.infrastructure.stub.CourseStub
 
 final class CourseSpec extends AcceptanceSpec {
   "return all courses" in {

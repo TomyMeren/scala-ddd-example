@@ -1,4 +1,6 @@
 package tv.codely.scala_http_api.module
 
-trait IntegrationTestCase {
-}
+import org.scalamock.scalatest.MockFactory
+import org.scalatest.{Matchers, WordSpec}
+
+protected[module] trait IntegrationTestCase extends WordSpec with Matchers with MockFactory
