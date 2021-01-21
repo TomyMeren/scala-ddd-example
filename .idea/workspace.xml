@@ -23,22 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7859f54-9bdc-4e12-8477-abfca093634f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/video/infrastructure/repository/InMemoryVideoRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/video/infrastructure/repository/InMemoryVideoRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/domain/DurationStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/shared/domain/DurationStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/domain/IntStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/shared/domain/IntStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/domain/StringStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/shared/domain/StringStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/domain/UuidStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/shared/domain/UuidStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/entry_point/VideoSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/entry_point/VideoSpec.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseIdStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseIdStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseTeacherStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseTeacherStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/domain/UserIdStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/domain/UserIdStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/domain/UserNameStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/domain/UserNameStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoCategoryStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoCategoryStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoDurationStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoDurationStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoIdStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoIdStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoTitleStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoTitleStub.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
