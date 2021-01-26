@@ -6,15 +6,25 @@ import tv.codely.scala_http_api.module.courses.domain.CourseStub
 import tv.codely.scala_http_api.module.courses.infrastructure.marshaller.CourseMarshaller
 
 final class CourseSpec extends AcceptanceSpec {
+
+  "post a course" in {
+    post("/courses",
+    """ {
+        | "id": "7341b1fc-3d80-4f6a-bcde-4fef86b01f95",
+        | "teacher": "Nacho Vidal"
+        |}
+        |""".stripMargin) {
+      status shouldBe StatusCodes.NoContent
+    }
+  }
+
+
   "return all courses" in {
     get("/courses") {
       val expectedCourses = Seq(
         CourseStub(
           id = "7341b1fc-3d80-4f6a-bcde-4fef86b01f95",
           teacher = "Nacho Vidal"
-        ), CourseStub(
-          id = "7341b1fc-3d80-4f6a-bcde-4fef86b01f93",
-          teacher = "Jordi NP"
         )
       )
 

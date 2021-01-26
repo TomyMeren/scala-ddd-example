@@ -14,8 +14,6 @@ protected[courses] final class InMemoryCourseRepositoryTest extends CourseIntegr
       repository.save(existingCourse)
       repository.save(anotherCourse)
 
-      println(repository.all())
-
       repository.all() should be(listCourses)
     }
   }
