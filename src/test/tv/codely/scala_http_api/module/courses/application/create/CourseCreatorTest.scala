@@ -13,7 +13,7 @@ final class CourseCreatorTest extends CourseUnitTestCase {
 
       shouldCreateVideo(course)
 
-      creater.create(course.id,course.teacher) should be()
+      creater.create(course.id,course.teacher,course.videoIdLists) should be()
 
     }
   }

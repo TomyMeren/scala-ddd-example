@@ -11,7 +11,8 @@ final class CourseSpec extends AcceptanceSpec {
     post("/courses",
     """ {
         | "id": "7341b1fc-3d80-4f6a-bcde-4fef86b01f95",
-        | "teacher": "Nacho Vidal"
+        | "teacher": "Nacho Vidal",
+        | "listVideoId": ["7341b1fc-3d80-4f6a-bcde-4fef86b01f91","7341b1fc-3d80-4f6a-bcde-4fef86b01f93","7341b1fc-3d80-4f6a-bcde-4fef86b01f92"]
         |}
         |""".stripMargin) {
       status shouldBe StatusCodes.NoContent
@@ -24,7 +25,8 @@ final class CourseSpec extends AcceptanceSpec {
       val expectedCourses = Seq(
         CourseStub(
           id = "7341b1fc-3d80-4f6a-bcde-4fef86b01f95",
-          teacher = "Nacho Vidal"
+          teacher = "Nacho Vidal",
+          listVideoId = Vector("7341b1fc-3d80-4f6a-bcde-4fef86b01f91","7341b1fc-3d80-4f6a-bcde-4fef86b01f93","7341b1fc-3d80-4f6a-bcde-4fef86b01f92")
         )
       )
 

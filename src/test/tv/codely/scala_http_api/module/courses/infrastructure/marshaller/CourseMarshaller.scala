@@ -10,7 +10,8 @@ object CourseMarshaller {
         u =>
           JsObject(
             "id" -> JsString(u.id.value.toString),
-            "teacher" -> JsString(u.teacher.value)
+            "teacher" -> JsString(u.teacher.value),
+            "videoIdLists" -> JsArray(u.videoIdLists.value.map(video => JsString(video.value.toString)))
           )).toVector
   )
 }

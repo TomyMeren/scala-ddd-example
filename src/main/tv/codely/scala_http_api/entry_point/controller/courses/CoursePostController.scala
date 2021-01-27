@@ -6,11 +6,11 @@ import akka.http.scaladsl.model.StatusCodes.NoContent
 import akka.http.scaladsl.server.Directives.complete
 import spray.json.DefaultJsonProtocol
 import tv.codely.scala_http_api.module.courses.application.create.CourseCreator
-import tv.codely.scala_http_api.module.courses.domain.{Course, CourseId, CourseTeacherName}
+import tv.codely.scala_http_api.module.courses.domain.{CourseId, CourseTeacherName, CourseVideoIdLists}
 
 final class CoursePostController (course:CourseCreator) extends SprayJsonSupport with DefaultJsonProtocol {
-  def post(id:String,teacher:String ) = {
-    course.create(CourseId(id), CourseTeacherName(teacher))
+  def post(id:String,teacher:String, videos:Vector[String] ) = {
+    course.create(CourseId(id), CourseTeacherName(teacher), CourseVideoIdLists(videos))
     complete(HttpResponse(NoContent))
   }
 }
