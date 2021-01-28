@@ -23,21 +23,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7859f54-9bdc-4e12-8477-abfca093634f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docker/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/.env.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/domain/CourseVideoIdLists.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseVideoIdListStub.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__co_fs2_fs2_core_2_12_0_10_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_chuusai_shapeless_2_12_2_3_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_github_scopt_scopt_2_12_3_7_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__mysql_mysql_connector_java_5_1_45_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_tpolecat_doobie_core_2_12_0_5_0_RC2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_tpolecat_doobie_free_2_12_0_5_0_RC2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_typelevel_cats_core_2_12_1_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_typelevel_cats_effect_2_12_0_8_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_typelevel_cats_free_2_12_1_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_typelevel_cats_kernel_2_12_1_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_typelevel_cats_macros_2_12_1_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_typelevel_machinist_2_12_0_6_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_typelevel_macro_compat_2_12_1_1_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/database.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/users.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/videos.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/cli/DbTablesCreator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Scala HTTP API.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Scala HTTP API.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/Routes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/Routes.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/controller/courses/CoursePostController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/controller/courses/CoursePostController.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/application/create/CourseCreator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/application/create/CourseCreator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/domain/Course.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/domain/Course.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/infraestructure/CourseMarshaller.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/courses/infraestructure/CourseMarshaller.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/entry_point/CourseSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/entry_point/CourseSpec.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/application/create/CourseCreatorTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/application/create/CourseCreatorTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/domain/CourseStub.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/infrastructure/marshaller/CourseMarshaller.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/infrastructure/marshaller/CourseMarshaller.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoIdStub.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/video/domain/VideoIdStub.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/.env.dist" beforeDir="false" afterPath="$PROJECT_DIR$/docker/.env.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Dependencies.scala" beforeDir="false" afterPath="$PROJECT_DIR$/project/Dependencies.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +85,7 @@
         <option value="Package Object" />
         <option value="Scala Object" />
         <option value="Scala Trait" />
+        <option value="Scala Worksheet" />
       </list>
     </option>
   </component>
@@ -96,6 +107,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -109,7 +121,7 @@
       <recent name="tv.codely.scala_http_api.entry_point.controller.user" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.InMemoryCourseRepositoryTest">
+  <component name="RunManager" selected="ScalaTest.CourseCreatorTest">
     <configuration name="CourseCreatorTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="Scala HTTP API" />
       <option name="allowRunningInParallel" value="false" />
@@ -176,15 +188,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="ScalaTest.InMemoryCourseRepositoryTest" />
-        <item itemvalue="ScalaTest.CourseSearcherTest" />
-        <item itemvalue="ScalaTest.CourseCreatorTest" />
-        <item itemvalue="ScalaTest.CourseSpec" />
-        <item itemvalue="ScalaTest.CourseSpec.post a course" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -222,10 +225,10 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="721" y="295" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611685407906" />
-    <state x="765" y="342" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611747142748">
+    <state x="765" y="342" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611753982959">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="765" y="342" key="#com.intellij.fileTypes.FileTypeChooser/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611747142748" />
+    <state x="765" y="342" key="#com.intellij.fileTypes.FileTypeChooser/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611753982959" />
     <state x="671" y="276" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1611747299435">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -286,24 +289,17 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1815" height="364" key="GridCell.Tab.1.right/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611747179513" />
-    <state x="698" y="273" width="585" height="534" key="find.popup" timestamp="1611745312598">
+    <state x="492" y="185" key="SettingsEditor" timestamp="1611753871034">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="698" y="273" width="585" height="534" key="find.popup/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611745312598" />
-    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1611225799543">
+    <state x="492" y="185" key="SettingsEditor/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611753871034" />
+    <state x="698" y="273" width="585" height="534" key="find.popup" timestamp="1611760745435">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611225799543" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/courses/application/search/CourseSearcherTest.scala</url>
-          <line>6</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="698" y="273" width="585" height="534" key="find.popup/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611760745435" />
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1611824210317">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611824210317" />
   </component>
 </project>

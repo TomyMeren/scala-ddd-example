@@ -12,7 +12,10 @@ object Dependencies {
     "com.typesafe.akka"      %% "akka-http"            % Versions.akkaHttp,
     "com.typesafe.akka"      %% "akka-actor"           % Versions.akka,
     "com.typesafe.akka"      %% "akka-stream"          % Versions.akka, // Explicit dependency due to: https://bit.ly/akka-http-25
-    "com.typesafe.akka"      %% "akka-http-spray-json" % Versions.akkaHttp
+    "com.typesafe.akka"      %% "akka-http-spray-json" % Versions.akkaHttp,
+    "com.github.scopt"       %% "scopt"                % "3.7.0",
+    "org.tpolecat"           %% "doobie-core"          % "0.5.0-RC2",
+    "mysql"                   % "mysql-connector-java" % "5.1.45"
   )
 
   val test = Seq(
