@@ -12,4 +12,4 @@ services:
       MYSQL_USER: codelytv
       MYSQL_PASSWORD: c0d3ly
     ports:
-      - ${CODELYTV_SCALA_API_DB_PORT}:3306
+      - ${MYSQL_PORT}:3306

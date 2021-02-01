@@ -23,7 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7859f54-9bdc-4e12-8477-abfca093634f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Scala HTTP API-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Scala HTTP API-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Scala HTTP API.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Scala HTTP API.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/database.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/database.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/.env.dist" beforeDir="false" afterPath="$PROJECT_DIR$/docker/.env.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +72,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -102,11 +112,11 @@
       <module name="Scala HTTP API" />
       <option name="allowRunningInParallel" value="false" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <option name="testKind" value="Class" />
       <option name="testClassPath" value="tv.codely.scala_http_api.module.courses.application.create.CourseCreatorTest" />
-      <option name="workingDirectory" value="C:\Users\tmerendo\Desktop\Scala\codelyTV\scala-ddd-example" />
+      <option name="workingDirectory" value="C:/Users/tmerendo/Desktop/Scala/codelyTV/scala-ddd-example" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -115,11 +125,11 @@
       <module name="Scala HTTP API" />
       <option name="allowRunningInParallel" value="false" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <option name="testKind" value="Class" />
       <option name="testClassPath" value="tv.codely.scala_http_api.module.courses.application.search.CourseSearcherTest" />
-      <option name="workingDirectory" value="C:\Users\tmerendo\Desktop\Scala\codelyTV\scala-ddd-example" />
+      <option name="workingDirectory" value="C:/Users/tmerendo/Desktop/Scala/codelyTV/scala-ddd-example" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,11 +138,11 @@
       <module name="Scala HTTP API" />
       <option name="allowRunningInParallel" value="false" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <option name="testKind" value="Class" />
       <option name="testClassPath" value="tv.codely.scala_http_api.entry_point.CourseSpec" />
-      <option name="workingDirectory" value="C:\Users\tmerendo\Desktop\Scala\codelyTV\scala-ddd-example" />
+      <option name="workingDirectory" value="C:/Users/tmerendo/Desktop/Scala/codelyTV/scala-ddd-example" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,12 +151,12 @@
       <module name="Scala HTTP API" />
       <option name="allowRunningInParallel" value="false" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <option name="testKind" value="Test name" />
       <option name="testClassPath" value="tv.codely.scala_http_api.entry_point.CourseSpec" />
       <option name="testName" value="post a course" />
-      <option name="workingDirectory" value="C:\Users\tmerendo\Desktop\Scala\codelyTV\scala-ddd-example" />
+      <option name="workingDirectory" value="C:/Users/tmerendo/Desktop/Scala/codelyTV/scala-ddd-example" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,11 +165,11 @@
       <module name="Scala HTTP API" />
       <option name="allowRunningInParallel" value="false" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <option name="testKind" value="Class" />
       <option name="testClassPath" value="tv.codely.scala_http_api.module.courses.infrastructure.repository.InMemoryCourseRepositoryTest" />
-      <option name="workingDirectory" value="C:\Users\tmerendo\Desktop\Scala\codelyTV\scala-ddd-example" />
+      <option name="workingDirectory" value="C:/Users/tmerendo/Desktop/Scala/codelyTV/scala-ddd-example" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,6 +191,9 @@
     </task>
     <servers />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -192,95 +205,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="764" y="32" key="#Auto_Import" timestamp="1611143782981">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="764" y="32" key="#Auto_Import/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611143782981" />
-    <state x="471" y="114" key="#Project_Structure" timestamp="1611742896825">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="471" y="114" key="#Project_Structure/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611742896825" />
-    <state x="721" y="295" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1611685407906">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="721" y="295" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611685407906" />
-    <state x="765" y="342" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611753982959">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="765" y="342" key="#com.intellij.fileTypes.FileTypeChooser/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611753982959" />
-    <state x="671" y="276" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1611747299435">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="671" y="276" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611747299435" />
-    <state x="475" y="464" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1611224896214">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="475" y="464" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611224896214" />
-    <state x="769" y="409" width="551" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1611156776622">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="769" y="409" width="551" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611156776622" />
-    <state x="752" y="421" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1611135629765">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="752" y="421" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611135629765" />
-    <state x="476" y="221" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1611153724760">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="476" y="221" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611153724760" />
-    <state x="771" y="295" key="FileChooserDialogImpl" timestamp="1611591610267">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="771" y="295" key="FileChooserDialogImpl/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611591610267" />
-    <state width="1815" height="364" key="GridCell.Tab.0.bottom" timestamp="1611747179512">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1237" height="209" key="GridCell.Tab.0.bottom/-1879.0.1239.720/62.0.1858.1080@-1879.0.1239.720" timestamp="1611233293555" />
-    <state width="1815" height="364" key="GridCell.Tab.0.bottom/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611747179512" />
-    <state width="1815" height="364" key="GridCell.Tab.0.center" timestamp="1611747179512">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1237" height="209" key="GridCell.Tab.0.center/-1879.0.1239.720/62.0.1858.1080@-1879.0.1239.720" timestamp="1611233293555" />
-    <state width="1815" height="364" key="GridCell.Tab.0.center/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611747179512" />
-    <state width="1815" height="364" key="GridCell.Tab.0.left" timestamp="1611747179512">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1237" height="209" key="GridCell.Tab.0.left/-1879.0.1239.720/62.0.1858.1080@-1879.0.1239.720" timestamp="1611233293555" />
-    <state width="1815" height="364" key="GridCell.Tab.0.left/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611747179512" />
-    <state width="1815" height="364" key="GridCell.Tab.0.right" timestamp="1611747179512">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1237" height="209" key="GridCell.Tab.0.right/-1879.0.1239.720/62.0.1858.1080@-1879.0.1239.720" timestamp="1611233293555" />
-    <state width="1815" height="364" key="GridCell.Tab.0.right/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611747179512" />
-    <state width="1815" height="364" key="GridCell.Tab.1.bottom" timestamp="1611747179513">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1815" height="364" key="GridCell.Tab.1.bottom/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611747179513" />
-    <state width="1815" height="364" key="GridCell.Tab.1.center" timestamp="1611747179513">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1815" height="364" key="GridCell.Tab.1.center/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611747179513" />
-    <state width="1815" height="364" key="GridCell.Tab.1.left" timestamp="1611747179513">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1815" height="364" key="GridCell.Tab.1.left/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611747179513" />
-    <state width="1815" height="364" key="GridCell.Tab.1.right" timestamp="1611747179513">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1815" height="364" key="GridCell.Tab.1.right/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611747179513" />
-    <state x="492" y="185" key="SettingsEditor" timestamp="1611753871034">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="492" y="185" key="SettingsEditor/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611753871034" />
-    <state x="698" y="273" width="585" height="534" key="find.popup" timestamp="1611760745435">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="698" y="273" width="585" height="534" key="find.popup/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611760745435" />
-    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1611824210317">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup/-1879.0.1239.720/62.0.1858.1080@62.0.1858.1080" timestamp="1611824210317" />
   </component>
 </project>
