@@ -20,7 +20,7 @@ object DbTablesCreator {
   )
 
   def main(args: Array[String]): Unit = {
-    val parser = new OptionParser[CommandConfig]("DbTablesCreator") {
+    val parser = new scopt.OptionParser[CommandConfig]("DbTablesCreator") {
       head("Build need enviroment to run tests", "1.0")
 
       opt[String]('f', "tablesFolder")

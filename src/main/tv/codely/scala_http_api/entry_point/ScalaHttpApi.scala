@@ -20,6 +20,8 @@ object ScalaHttpApi {
     val host = serverConfig.getString("http-server.host")
     val port = serverConfig.getInt("http-server.port")
 
+    val dbConfig = DbConfig(appConfig.getConfig("database"))
+
     implicit val system: ActorSystem = ActorSystem(actorSystemName)
     implicit val materializer: ActorMaterializer = ActorMaterializer()
     implicit val executionContext: ExecutionContextExecutor = system.dispatcher
