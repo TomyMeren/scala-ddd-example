@@ -3,7 +3,7 @@ package tv.codely.scala_http_api.module.user.infrastructure.repository
 import tv.codely.scala_http_api.module.user.domain.UserStub
 import tv.codely.scala_http_api.module.user.infrastructure.UserIntegrationTestCase
 
-final class InMemoryUserRepositoryTest extends UserIntegrationTestCase {
+final class DoobieMySqlUserRepositoryTest extends UserIntegrationTestCase {
 
   "User repository Searcher" should {
     "search all existing users" in {

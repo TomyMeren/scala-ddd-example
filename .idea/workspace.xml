@@ -23,13 +23,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7859f54-9bdc-4e12-8477-abfca093634f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/cli/DbTablesCreatorTomy.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Scala HTTP API.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Scala HTTP API.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/shared/infrastructure/config/DbConfig.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/shared/infrastructure/depency_injection/SharedModuleDependencyContainer.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/shared/infrastructure/persistence/doobie/DoobieDbConnection.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/shared/infrastructure/persistence/doobie/TypesConversions.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/database.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/database.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/ScalaHttpApi.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/ScalaHttpApi.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/cli/DbTablesCreator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/cli/DbTablesCreator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/entry_point/cli/DbTablesCreatorTomy.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/application/UserSearcher.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/application/UserSearcher.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/domain/UserRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/domain/UserRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/infrastructure/dependency_injection/UserModuleDependecyContainer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/infrastructure/dependency_injection/UserModuleDependecyContainer.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/infrastructure/repository/InMemoryUserRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tv/codely/scala_http_api/module/user/infrastructure/repository/DoobieMySqlUserRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/infrastructure/UserIntegrationTestCase.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/infrastructure/UserIntegrationTestCase.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/infrastructure/repository/InMemoryUserRepositoryTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tv/codely/scala_http_api/module/user/infrastructure/repository/DoobieMySqlUserRepositoryTest.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +98,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Dev/code/iberdrola/conscups/scala" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../scala-examples" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

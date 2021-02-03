@@ -1,0 +1,27 @@
+package tv.codely.scala_http_api.module.user.infrastructure.repository
+
+import doobie.implicits._
+import tv.codely.scala_http_api.module.shared.infrastructure.persistence.doobie.DoobieDbConnection
+import tv.codely.scala_http_api.module.user.domain.{User, UserRepository}
+
+import tv.codely.scala_http_api.module.shared.infrastructure.persistence.doobie.TypesConversions
+
+import scala.concurrent.{ExecutionContext, Future}
+
+final class DoobieMySqlUserRepository(db:DoobieDbConnection)(implicit executionContext:ExecutionContext)
+  extends UserRepository {
+
+  def all():Future[Seq[User]] = db.read(
+    sql"SELECT user_id, name FROM users"
+    .query[User]
+    .to[Seq]
+  )
+
+  def save(user:User):Future[Unit]  = sql"INSERT INTO users(user_id, name) VALUES (${user.id},${user.name})"
+    .update
+    .run
+    .transact(db.transactor)
+    .unsafeToFuture()
+    .map( _ => ())
+
+}
