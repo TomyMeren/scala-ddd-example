@@ -1,19 +1,19 @@
 package tv.codely.scala_http_api.module.video.application.create
 
 import tv.codely.scala_http_api.module.video.domain.VideoStub
-import tv.codely.scala_http_api.module.video.infrastructure.VideoUnitTestCase
+import tv.codely.scala_http_api.module.video.infrastructure.VideoRepositoryMock
+import tv.codely.scala_http_api.module.UnitTestCase
 
-final class VideoCreatorShould extends VideoUnitTestCase {
+final class VideoCreatorShould extends UnitTestCase with VideoRepositoryMock {
   private val creator = new VideoCreator(repository)
 
-  "VideoCreator" should {
-    "create Videos" in {
+    "save a Videos" in {
       val existingVideo = VideoStub.random
 
-      shouldSaveVideo(existingVideo)
+      repositoryShouldSave(existingVideo)
 
       creator.create(existingVideo.id, existingVideo.title, existingVideo.duration, existingVideo.category) should be()
 
     }
   }
-}
+

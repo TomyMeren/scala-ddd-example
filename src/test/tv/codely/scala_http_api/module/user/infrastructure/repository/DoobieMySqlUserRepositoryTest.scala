@@ -1,19 +1,29 @@
 package tv.codely.scala_http_api.module.user.infrastructure.repository
 
-import tv.codely.scala_http_api.module.user.domain.UserStub
+import doobie.implicits._
+import tv.codely.scala_http_api.module.user.domain.UserStub.randomSeqUser
 import tv.codely.scala_http_api.module.user.infrastructure.UserIntegrationTestCase
 
-final class DoobieMySqlUserRepositoryTest extends UserIntegrationTestCase {
+protected[user] final class DoobieMySqlUserRepositoryTest extends UserIntegrationTestCase {
 
-  "User repository Searcher" should {
-    "search all existing users" in {
+  protected def cleanTable =
+    sql"TRUNCATE TABLE users".update.run
+      .transact(doobieDbConnection.transactor)
+      .unsafeToFuture()
+      .futureValue
 
-      val expectedUser = Seq(
-        UserStub(id = "deacd129-d419-4552-9bfc-0723c3c4f56a", name = "Edufasio"),
-        UserStub(id = "b62f767f-7160-4405-a4af-39ebb3635c17", name = "Edonisio")
-      )
+  override protected def beforeEach(): Unit = {
+    super.beforeEach()
+    cleanTable
+  }
 
-      repository.all() should be(expectedUser)
-    }
+  "return users is empty" in {
+    repository.all.futureValue shouldBe Seq.empty
+  }
+
+  "search all existing users" in {
+    val expectedUser = randomSeqUser
+    expectedUser.map(repository.save(_).futureValue)
+    repository.all().futureValue shouldBe expectedUser
   }
 }

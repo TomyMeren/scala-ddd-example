@@ -1,20 +1,33 @@
 package tv.codely.scala_http_api.module.courses.infrastructure.repository
 
-import tv.codely.scala_http_api.module.courses.domain.CourseStub
+import doobie.implicits._
+import doobie.implicits.toSqlInterpolator
+import tv.codely.scala_http_api.module.courses.domain.CourseStub.randomSeqCourse
 import tv.codely.scala_http_api.module.courses.infrastructure.CourseIntegrationTestCase
 
-protected[courses] final class InMemoryCourseRepositoryTest extends CourseIntegrationTestCase {
-  "test de integracion de users" should {
-    "creamos 2 usuarios y verificamos que existen" in {
-      val existingCourse = CourseStub.random
-      val anotherCourse = CourseStub.random
+protected[courses] final class DoobieMySqlCourseRepositoryTest extends CourseIntegrationTestCase {
 
-      val listCourses =Seq(existingCourse,anotherCourse)
+  protected def cleanTable =
+    sql"TRUNCATE TABLE courses".update.run
+      .transact(doobieDbConnection.transactor)
+      .unsafeToFuture()
+      .futureValue
 
-      repository.save(existingCourse)
-      repository.save(anotherCourse)
+  override protected def beforeEach(): Unit = {
+    super.beforeEach()
+    cleanTable
+  }
 
-      repository.all() should be(listCourses)
-    }
+  "La tabla courses esta vacia repo esta vacio" in {
+    repository.all().futureValue shouldBe Seq.empty
+  }
+
+  "creamos 2 usuarios y verificamos que existen" in {
+
+    val listCourses = randomSeqCourse
+
+    listCourses.foreach(repository.save(_).futureValue)
+
+    repository.all().futureValue shouldBe listCourses
   }
 }

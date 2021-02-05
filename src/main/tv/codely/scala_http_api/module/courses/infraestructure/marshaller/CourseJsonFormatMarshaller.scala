@@ -6,7 +6,7 @@ import tv.codely.scala_http_api.module.courses.domain.{Course, CourseId, CourseT
 
 import java.util.UUID
 
-object CourseMarshaller {
+object CourseJsonFormatMarshaller {
   implicit object UuidMarshaller extends JsonFormat[UUID] {
     def write(value: UUID): JsValue = JsString(value.toString)
 

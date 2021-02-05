@@ -1,5 +1,7 @@
 package tv.codely.scala_http_api.module.user.domain
 
+import tv.codely.scala_http_api.module.shared.domain.SeqStub
+
 object UserStub {
   def apply(
     id: String = UserIdStub.random.value.toString,
@@ -7,4 +9,7 @@ object UserStub {
   ): User = User(id, name)
 
   def random: User = apply()
+
+
+  def randomSeqUser = SeqStub.randomOf(random)
 }

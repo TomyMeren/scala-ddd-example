@@ -1,21 +1,25 @@
 package tv.codely.scala_http_api.module.video.infrastructure
 
+import org.scalamock.scalatest.MockFactory
 import tv.codely.scala_http_api.module.UnitTestCase
 import tv.codely.scala_http_api.module.video.domain.{Video, VideoRepository}
 
-protected[video] trait VideoUnitTestCase extends UnitTestCase {
+import scala.concurrent.Future
+
+protected[video] trait VideoRepositoryMock extends UnitTestCase with MockFactory {
+  this:UnitTestCase =>
 
   protected val repository: VideoRepository = mock[VideoRepository]
 
   protected def shouldSearchAllVideo(videos: Seq[Video]): Unit = {
     (repository.all _)
       .expects()
-      .returning(videos)
+      .returning(Future.successful(videos))
   }
 
-  protected def shouldSaveVideo(video: Video): Unit = {
+  protected def repositoryShouldSave(video: Video): Unit = {
     (repository.save _)
       .expects(video)
-      .returning(())
+      .returning(Future.unit)
   }
 }

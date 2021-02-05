@@ -4,7 +4,7 @@ import doobie.implicits._
 import tv.codely.scala_http_api.module.shared.infrastructure.persistence.doobie.DoobieDbConnection
 import tv.codely.scala_http_api.module.user.domain.{User, UserRepository}
 
-import tv.codely.scala_http_api.module.shared.infrastructure.persistence.doobie.TypesConversions
+import tv.codely.scala_http_api.module.shared.infrastructure.persistence.doobie.TypesConversions._
 
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -23,5 +23,4 @@ final class DoobieMySqlUserRepository(db:DoobieDbConnection)(implicit executionC
     .transact(db.transactor)
     .unsafeToFuture()
     .map( _ => ())
-
 }

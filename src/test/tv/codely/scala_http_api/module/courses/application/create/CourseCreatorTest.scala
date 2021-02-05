@@ -1,9 +1,9 @@
 package tv.codely.scala_http_api.module.courses.application.create
 
 import tv.codely.scala_http_api.module.courses.domain.{Course, CourseStub}
-import tv.codely.scala_http_api.module.courses.infrastructure.CourseUnitTestCase
+import tv.codely.scala_http_api.module.courses.infrastructure.CourseRepositoryMock
 
-final class CourseCreatorTest extends CourseUnitTestCase {
+final class CourseCreatorTest extends CourseRepositoryMock {
 
   val creater = new CourseCreator(repository)
 
@@ -13,7 +13,7 @@ final class CourseCreatorTest extends CourseUnitTestCase {
 
       shouldCreateVideo(course)
 
-      creater.create(course.id,course.teacher,course.videoIdLists) should be()
+      creater.create(course.id,course.teacher) should be()
 
     }
   }

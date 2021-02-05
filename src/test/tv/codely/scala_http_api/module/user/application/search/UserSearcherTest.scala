@@ -1,9 +1,9 @@
 package tv.codely.scala_http_api.module.user.application.search
 
 import tv.codely.scala_http_api.module.user.domain.UserStub
-import tv.codely.scala_http_api.module.user.infrastructure.UserUnitTestCase
+import tv.codely.scala_http_api.module.user.infrastructure.UserRepositoryMock
 
-final class UserSearcherTest extends UserUnitTestCase {
+final class UserSearcherTest extends UserRepositoryMock {
   private val searcher = new UserSearcher(repository)
 
   "User Searcher" should {
@@ -14,7 +14,7 @@ final class UserSearcherTest extends UserUnitTestCase {
 
       shouldSearchAllUsers(existingUsers)
 
-      searcher.all() should be (existingUsers)
+      searcher.all().futureValue should be (existingUsers)
 
     }
   }

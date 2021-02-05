@@ -70,7 +70,7 @@ object DbTablesCreator {
 
     println(s"[INFO] Creating the following tables: ${tablesFiles.mkString(", ")}…")
 
-    val createTablesQueries:Array[String] = tablesFiles.map(fromFile(_).getLines.mkString)//Mtemos los create tables en Arrays
+    val createTablesQueries:Array[String] = tablesFiles.map(fromFile(_).getLines.mkString)//Metemos los create tables en Arrays
 
     val applySchemaStatement = connection.createStatement
 

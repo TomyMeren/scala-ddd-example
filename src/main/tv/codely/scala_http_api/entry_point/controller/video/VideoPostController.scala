@@ -14,7 +14,6 @@ final class VideoPostController(video : VideoCreator) extends SprayJsonSupport w
 
   def post(id:String,title:String,duration:Duration, category:String) = {
     video.create(VideoId(id), VideoTitle(title), VideoDuration(duration), VideoCategory(category))
-
     complete(HttpResponse(NoContent))
   }
 }

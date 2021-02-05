@@ -6,7 +6,7 @@ import tv.codely.scala_http_api.module.video.infrastructure.dependecy_injection.
 
 protected[video] trait VideoIntegrationTestCase extends IntegrationTestCase {
 
-  private val container = new VideoModuleDependecyContainer
+  private val container = new VideoModuleDependecyContainer(dbConnection)
 
   protected val repository: VideoRepository = container.repo
 }

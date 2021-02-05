@@ -2,7 +2,7 @@ package tv.codely.scala_http_api.entry_point
 
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
-import spray.json.DefaultJsonProtocol.{IntJsonFormat, StringJsonFormat, vectorFormat}
+import spray.json.DefaultJsonProtocol.{IntJsonFormat, StringJsonFormat}
 import spray.json.JsValue
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
 
@@ -16,6 +16,15 @@ final class Routes(container: EntryPointDependencyContainer) {
 
   private val users = get {
     path("users")(container.userGetController.get())
+  } ~ post {
+    path("users") {
+      jsonBody { body =>
+        container.userPostController.post(
+          body("id").convertTo[String],
+          body("name").convertTo[String]
+        )
+      }
+    }
   }
 
   private val videos = get {
@@ -41,8 +50,7 @@ final class Routes(container: EntryPointDependencyContainer) {
       jsonBody { body =>
         container.coursePostController.post(
           body("id").convertTo[String],
-          body("teacher").convertTo[String],
-          body("listVideoId").convertTo[Vector[String]]
+          body("teacher").convertTo[String]
         )
       }
     }

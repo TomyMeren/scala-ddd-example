@@ -1,9 +1,9 @@
 package tv.codely.scala_http_api.module.courses.application.search
 
 import tv.codely.scala_http_api.module.courses.domain.{Course, CourseStub}
-import tv.codely.scala_http_api.module.courses.infrastructure.CourseUnitTestCase
+import tv.codely.scala_http_api.module.courses.infrastructure.CourseRepositoryMock
 
-final class CourseSearcherTest extends CourseUnitTestCase {
+final class CourseSearcherTest extends CourseRepositoryMock {
   val searcher = new CourseSearcher(repository)
 
   "Obtain all courses" should {
@@ -14,7 +14,7 @@ final class CourseSearcherTest extends CourseUnitTestCase {
 
       shouldSearchAllCourses(courses)
 
-      searcher.all() should be(courses)
+      searcher.all().futureValue should be(courses)
     }
   }
 }

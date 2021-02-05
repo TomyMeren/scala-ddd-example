@@ -10,7 +10,7 @@ import tv.codely.scala_http_api.module.shared.infrastructure.depency_injection.S
 import tv.codely.scala_http_api.module.user.infrastructure.dependency_injection.UserModuleDependecyContainer
 import tv.codely.scala_http_api.module.video.infrastructure.dependecy_injection.VideoModuleDependecyContainer
 
-import scala.concurrent.ExecutionContextExecutor
+import scala.concurrent.{ExecutionContext, ExecutionContextExecutor}
 import scala.io.StdIn
 
 object ScalaHttpApi {
@@ -24,13 +24,12 @@ object ScalaHttpApi {
 
     val dbConfig = DbConfig(appConfig.getConfig("database"))
 
-    val sharedDependencies = new SharedModuleDependencyContainer(dbConfig)
+    val sharedDependencies = new SharedModuleDependencyContainer(actorSystemName, dbConfig)
 
-    implicit val system: ActorSystem = ActorSystem(actorSystemName)
-    implicit val materializer: ActorMaterializer = ActorMaterializer()
-    implicit val executionContext: ExecutionContextExecutor = system.dispatcher
+    implicit val system: ActorSystem                = sharedDependencies.system
+    implicit val materializer: ActorMaterializer    = sharedDependencies.materializer
+    implicit val executionContext: ExecutionContext = sharedDependencies.executionContext
 
-    //TODO:revisar
     val container:EntryPointDependencyContainer = new EntryPointDependencyContainer(
       new UserModuleDependecyContainer(sharedDependencies.doobieDbConnection),
       new VideoModuleDependecyContainer(sharedDependencies.doobieDbConnection),

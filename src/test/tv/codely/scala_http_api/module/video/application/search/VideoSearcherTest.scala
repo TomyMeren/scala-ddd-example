@@ -1,9 +1,9 @@
 package tv.codely.scala_http_api.module.video.application.search
 
 import tv.codely.scala_http_api.module.video.domain.VideoStub
-import tv.codely.scala_http_api.module.video.infrastructure.VideoUnitTestCase
+import tv.codely.scala_http_api.module.video.infrastructure.VideoRepositoryMock
 
-final class VideoSearcherTest extends VideoUnitTestCase {
+final class VideoSearcherTest extends VideoRepositoryMock {
   private val searcher = new VideoSearcher(repository)
 
   "Video Creator" should {
@@ -14,7 +14,7 @@ final class VideoSearcherTest extends VideoUnitTestCase {
 
       shouldSearchAllVideo(existingVideos)
 
-      searcher.all() should be (existingVideos)
+      searcher.all().futureValue should be (existingVideos)
 
     }
   }

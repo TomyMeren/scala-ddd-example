@@ -1,7 +1,11 @@
 package tv.codely.scala_http_api.module.courses.domain
 
-object CourseStub {
-  def apply(id: String, teacher: String, listVideoId:Vector[String]) = Course(id, teacher, listVideoId)
+import tv.codely.scala_http_api.module.shared.domain.SeqStub.randomOf
 
-  def random = Course(CourseIdStub.random.value.toString, CourseTeacherStub.random.value, CourseVideoIdListStub.random.value.map(_.value.toString))
+object CourseStub {
+  def apply(id: String, teacher: String) = Course(id, teacher)
+
+  def random = Course(CourseIdStub.random.value.toString, CourseTeacherStub.random.value)
+
+  def randomSeqCourse:Seq[Course] = randomOf(random)
 }

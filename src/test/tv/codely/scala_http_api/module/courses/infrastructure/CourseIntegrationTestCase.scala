@@ -5,7 +5,7 @@ import tv.codely.scala_http_api.module.courses.infraestructure.dependency_inject
 
 trait CourseIntegrationTestCase extends IntegrationTestCase {
 
-  val module = new CourseModuleDependencyContainer
+  private val container = new CourseModuleDependencyContainer(dbConnection)
 
-  val repository = module.repo
+  protected val repository = container.repo
 }

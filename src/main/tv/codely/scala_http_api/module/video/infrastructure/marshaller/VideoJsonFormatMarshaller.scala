@@ -1,6 +1,6 @@
 package tv.codely.scala_http_api.module.video.infrastructure.marshaller
 
-import spray.json.DefaultJsonProtocol.{jsonFormat, jsonFormat4}
+import spray.json.DefaultJsonProtocol.jsonFormat
 import spray.json.{DeserializationException, JsNumber, JsString, JsValue, JsonFormat, RootJsonFormat}
 import tv.codely.scala_http_api.module.video.domain._
 
