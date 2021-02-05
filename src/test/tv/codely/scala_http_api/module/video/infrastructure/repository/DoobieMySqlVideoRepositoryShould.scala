@@ -3,7 +3,7 @@ package tv.codely.scala_http_api.module.video.infrastructure.repository
 import tv.codely.scala_http_api.module.video.domain.VideoStub
 import tv.codely.scala_http_api.module.video.infrastructure.VideoIntegrationTestCase
 
-protected[video] final class InMemoryVideoRepositoryTest extends VideoIntegrationTestCase {
+protected[video] final class DoobieMySqlVideoRepositoryTest extends VideoIntegrationTestCase {
   "Video repository test" should {
     "insert and search de test" in {
 

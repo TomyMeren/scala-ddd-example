@@ -1,21 +1,12 @@
-package tv.codely.scala_http_api.module.user.infrastructure
+package tv.codely.scala_http_api.module.user.infrastructure.marshaller
 
-import java.util.UUID
-
-import spray.json.DefaultJsonProtocol._
+import spray.json.DefaultJsonProtocol.jsonFormat2
 import spray.json.{DeserializationException, JsString, JsValue, JsonFormat, RootJsonFormat}
 import tv.codely.scala_http_api.module.user.domain.{User, UserId, UserName}
 
+import java.util.UUID
+
 object UserMarshaller {
-
-  implicit object UserNameMarshaller extends JsonFormat[UserName] {
-    def write(value: UserName): JsValue = JsString(value.value)
-
-    def read(value: JsValue): UserName = value match {
-      case JsString(name) => UserName(name)
-      case _              => throw DeserializationException("Expected 1 string for UserName")
-    }
-  }
 
   implicit object UuidMarshaller extends JsonFormat[UUID] {
     def write(value: UUID): JsValue = JsString(value.toString)
@@ -32,6 +23,15 @@ object UserMarshaller {
     def read(value: JsValue): UserId = value match {
       case JsString(id) => UserId(id)
       case _            => throw DeserializationException("Expected 1 string for UserId")
+    }
+  }
+
+  implicit object UserNameMarshaller extends JsonFormat[UserName] {
+    def write(value: UserName): JsValue = JsString(value.value)
+
+    def read(value: JsValue): UserName = value match {
+      case JsString(name) => UserName(name)
+      case _              => throw DeserializationException("Expected 1 string for UserName")
     }
   }
 

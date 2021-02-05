@@ -3,7 +3,7 @@ package tv.codely.scala_http_api.module.courses.infrastructure
 import tv.codely.scala_http_api.module.UnitTestCase
 import tv.codely.scala_http_api.module.courses.domain.{Course, CourseRepository}
 
-trait CourseUnitTestCase extends UnitTestCase {
+trait CourseUnitTestCase extends UnitTestCase with mock {
 
   val repository: CourseRepository = mock[CourseRepository]
 

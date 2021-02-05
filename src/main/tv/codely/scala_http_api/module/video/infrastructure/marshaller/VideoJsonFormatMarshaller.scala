@@ -1,12 +1,12 @@
-package tv.codely.scala_http_api.module.video.infrastructure
+package tv.codely.scala_http_api.module.video.infrastructure.marshaller
+
+import spray.json.DefaultJsonProtocol.{jsonFormat, jsonFormat4}
+import spray.json.{DeserializationException, JsNumber, JsString, JsValue, JsonFormat, RootJsonFormat}
+import tv.codely.scala_http_api.module.video.domain._
 
 import java.util.UUID
 
-import spray.json.{DeserializationException, JsNumber, JsString, JsValue, JsonFormat, RootJsonFormat}
-import spray.json.DefaultJsonProtocol._
-import tv.codely.scala_http_api.module.video.domain._
-
-object VideoMarshaller {
+object VideoJsonFormatMarshaller {
   implicit object UuidMarshaller extends JsonFormat[UUID] {
     def write(value: UUID): JsValue = JsString(value.toString)
 
@@ -52,7 +52,11 @@ object VideoMarshaller {
     }
   }
 
-  implicit val videoFormat: RootJsonFormat[Video] = jsonFormat4(
-    Video.apply(_: VideoId, _: VideoTitle, _: VideoDuration, _: VideoCategory)
+  implicit val videoFormat: RootJsonFormat[Video] = jsonFormat(
+    Video.apply(_: VideoId, _: VideoTitle, _: VideoDuration, _: VideoCategory),
+    "id",
+    "title",
+    "duration_in_seconds",
+    "category"
   )
 }

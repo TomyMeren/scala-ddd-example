@@ -3,7 +3,7 @@ package tv.codely.scala_http_api.module.video.application.create
 import tv.codely.scala_http_api.module.video.domain.VideoStub
 import tv.codely.scala_http_api.module.video.infrastructure.VideoUnitTestCase
 
-final class VideoCreatorTest extends VideoUnitTestCase {
+final class VideoCreatorShould extends VideoUnitTestCase {
   private val creator = new VideoCreator(repository)
 
   "VideoCreator" should {
