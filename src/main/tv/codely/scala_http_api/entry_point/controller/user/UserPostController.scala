@@ -7,7 +7,9 @@ import akka.http.scaladsl.server.StandardRoute
 import tv.codely.scala_http_api.module.user.application.register.UserRegistrar
 import tv.codely.scala_http_api.module.user.domain.{UserId, UserName}
 
-final class UserPostController(registrar: UserRegistrar) {
+import scala.concurrent.Future
+
+final class UserPostController(registrar: UserRegistrar[Future]) {
   def post(id: String, name: String): StandardRoute = {
     registrar.register(UserId(id), UserName(name))
 

@@ -1,14 +1,16 @@
 package tv.codely.scala_http_api.module.shared.infrastructure.message_broker.rabbitmq
 
+import cats.Id
 import com.rabbitmq.client.MessageProperties
 import tv.codely.scala_http_api.module.shared.domain.{Message, MessagePublisher}
 import tv.codely.scala_http_api.module.shared.infrastructure.marshaller.MessageJsonFormatMarshaller.MessageMarshaller
 
-final class RabbitMqMessagePublisher(channelFactory: RabbitMqChannelFactory) extends MessagePublisher {
+final class RabbitMqMessagePublisher(channelFactory: RabbitMqChannelFactory) extends MessagePublisher[Id] {
   private val channel = channelFactory.channel
 
   // Use the default nameless exchange in order to route the published messages based on
   // the mapping between the message routing key and the queue names.
+
   // Example: A message with routing key "codelytv_scala_api.video_created"
   // will be routed to the "codelytv_scala_api.video_created" queue.
   private val exchange = ""
@@ -22,7 +24,7 @@ final class RabbitMqMessagePublisher(channelFactory: RabbitMqChannelFactory) ext
     channel.queueDeclare(name, availableAfterRestart, exclusiveToConnection, deleteOnceMessageConsumed, arguments)
   }
 
-  override def publish[T <: Message](message: T): Unit = {
+  override def publish(message: Message): Unit = {
     val routingKey    = message.`type`
     val messageJson   = MessageMarshaller.write(message)
     val messageBytes  = messageJson.toString.getBytes

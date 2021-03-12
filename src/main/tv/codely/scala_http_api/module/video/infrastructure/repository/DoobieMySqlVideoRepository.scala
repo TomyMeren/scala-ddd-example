@@ -8,7 +8,7 @@ import tv.codely.scala_http_api.module.shared.infrastructure.persistence.doobie.
 import scala.concurrent.{ExecutionContext, Future}
 
 final class DoobieMySqlVideoRepository(db: DoobieDbConnection)(implicit executionContext: ExecutionContext)
-    extends VideoRepository {
+    extends VideoRepository[Future] {
   override def all(): Future[Seq[Video]] =
     db.read(sql"SELECT video_id, title, duration_in_seconds, category FROM videos".query[Video].to[Seq])
 
