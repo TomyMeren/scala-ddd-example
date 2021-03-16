@@ -2,6 +2,7 @@ package tv.codely.scala_http_api.module.shared.infrastructure.dependency_injecti
 
 import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
+import cats.effect.IO
 import tv.codely.scala_http_api.module.shared.domain.Logger
 import tv.codely.scala_http_api.module.shared.infrastructure.config.{DbConfig, MessageBrokerConfig}
 import tv.codely.scala_http_api.module.shared.infrastructure.logger.scala_logging.ScalaLoggingLogger
@@ -19,7 +20,7 @@ final class SharedModuleDependencyContainer(
   val materializer: ActorMaterializer    = ActorMaterializer()
   val executionContext: ExecutionContext = actorSystem.dispatcher
 
-  val doobieDbConnection: DoobieDbConnection = new DoobieDbConnection(dbConfig)
+  val doobieDbConnection: DoobieDbConnection[IO] = new DoobieDbConnection[IO](dbConfig)
 
   private val rabbitMqChannelFactory     = new RabbitMqChannelFactory(publisherConfig)
   val messagePublisher = new RabbitMqMessagePublisher(rabbitMqChannelFactory)

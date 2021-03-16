@@ -1,8 +1,6 @@
 package tv.codely.scala_http_api.module.shared.domain
 
-import cats.{Id, ~>}
-
-import scala.concurrent.{ExecutionContext, Future}
+import cats.~>
 
 trait MessagePublisher[P[_]] {
   def publish(message: Message): P[Unit]
@@ -22,8 +20,5 @@ object MessagePublisher {
     }
   }
 
-  implicit def fromIdToFutureMp(implicit ec: ExecutionContext): Id ~> Future =
-    new (Id ~> Future) {
-      def apply[T](p: Id[T]): Future[T] = Future(p)
-    }
+
 }
