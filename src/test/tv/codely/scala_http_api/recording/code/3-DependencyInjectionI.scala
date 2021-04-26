@@ -15,14 +15,15 @@ object BaseInstances {
   import scala.concurrent.{ExecutionContext, Future}
   import doobie.implicits._
   import effects.repositories.doobie.TypesConversions._
+
   type DoobieDbConnection = effects.repositories.doobie.DoobieDbConnection[Future]
   import cats.implicits._
   import FunctionalAPIs.UserRepository
 
   final case class DoobieMySqlUserRepository()(implicit
-                                               db: DoobieDbConnection,
-                                               ec: ExecutionContext)
-      extends UserRepository[Future] {
+    db: DoobieDbConnection,
+    ec: ExecutionContext)
+    extends UserRepository[Future] {
 
     override def all(): Future[Seq[User]] = {
       db.read(sql"SELECT user_id, name FROM users".query[User].to[Seq])
@@ -94,11 +95,15 @@ object DerivedInstancesI {
   import FunctionalAPIs.MessagePublisher
 
   implicit def messagePublisherTrans(mp: MessagePublisher[Id])(implicit
-                                                               ec: ExecutionContext): MessagePublisher[Future] =
+    ec: ExecutionContext): MessagePublisher[Future] =
     new MessagePublisher[Future] {
       def publish(message: Message): Future[Unit] =
         Future(mp.publish(message))
     }
+
+  def messagePublisherTransTomy(mp: MessagePublisher[Id])
+    (implicit ec: ExecutionContext): MessagePublisher[Future] =
+    (message: Message) => Future(mp.publish(message))
 }
 
 /**
@@ -114,10 +119,19 @@ object InyentadoDependenciasII {
   import DerivedInstancesI._
 
   def userRegisterDoobieRabbitMQFuture(implicit
-                                       doobieCon: DoobieDbConnection,
-                                       busConfig: RabbitMqConfig,
-                                       ec: ExecutionContext): UserRegisterRepoPublisher[Future] =
+    doobieCon: DoobieDbConnection,
+    busConfig: RabbitMqConfig,
+    ec: ExecutionContext): UserRegisterRepoPublisher[Future] =
     UserRegisterRepoPublisher[Future](DoobieMySqlUserRepository(), RabbitMqInstance)
+
+  def userRegisterDoobieRabbitMQFutureTomy(implicit
+    doobieCon: DoobieDbConnection,
+    busConfig: RabbitMqConfig,
+    ec: ExecutionContext
+  ): UserRegisterRepoPublisher[Future] =
+    UserRegisterRepoPublisher[Future](
+      DoobieMySqlUserRepository(),
+      messagePublisherTransTomy(RabbitMqInstance))
 }
 
 /**
@@ -129,12 +143,12 @@ object DerivedInstancesII {
   import effects.bus.api.Message
   import FunctionalAPIs.MessagePublisher
 
-  // implicit def messagePublisherTrans(mp: MessagePublisher[Id])(implicit
-  //   ec: ExecutionContext): MessagePublisher[Future] =
-  //   new MessagePublisher[Future]{
-  //     def publish(message: Message): Future[Unit] =
-  //       Future(mp.publish(message))
-  //   }
+  //  implicit def messagePublisherTrans(mp: MessagePublisher[Id])(implicit
+  //    ec: ExecutionContext): MessagePublisher[Future] =
+  //    new MessagePublisher[Future]{
+  //      def publish(message: Message): Future[Unit] =
+  //        Future(mp.publish(message))
+  //    }
 
   import cats.effect.IO
 
@@ -146,14 +160,27 @@ object DerivedInstancesII {
   //   }
 
   import cats.~>
+
   implicit def messagePublisherTrans[P[_], Q[_]](mp: MessagePublisher[P])(implicit Q: P ~> Q): MessagePublisher[Q] =
     new MessagePublisher[Q] {
       def publish(message: Message): Q[Unit] =
         Q(mp.publish(message))
     }
 
+  implicit def messagePublisherTransGeneTomy[P[_], Q[_]](mp: MessagePublisher[P])
+    (implicit Q: P ~> Q): MessagePublisher[Q] =
+    new MessagePublisher[Q] {
+      def publish(message: Message): Q[Unit] = Q(mp.publish(message))
+    }
+
   implicit def fromIdToFuture(implicit ec: ExecutionContext): Id ~> Future = new (Id ~> Future) {
     def apply[T](a: Id[T]): Future[T] =
       Future(a)
   }
+
+  implicit def fromIdToFutureTomy(implicit ec: ExecutionContext): Id ~> Future =
+    new (Id ~> Future) {
+      def apply[T](a: Id[T]):Future[T] = Future(a)
+    }
 }
+

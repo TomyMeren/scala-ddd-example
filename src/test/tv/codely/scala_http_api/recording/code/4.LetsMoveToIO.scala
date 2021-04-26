@@ -2,6 +2,9 @@ package tv.codely.scala_http_api
 package recording.code
 
 import application.user.api.User
+import DerivedInstancesII.messagePublisherTrans
+
+import scala.concurrent.{ExecutionContext, Future}
 
 /**
   * 1. ¡Pero todavía seguimos generando instancias para Future!
@@ -58,6 +61,22 @@ object BaseInstancesII {
         .transact(db.transactor)
         .map(_ => ())
   }
+
+   final case class DoobieMySqlUserRepositoryTomy[P[_]]()(implicit
+     db: DoobieDbConnection[P],
+     monad: Monad[P]) extends UserRepository[P] {
+
+     override def all(): P[Seq[User]] = {
+       sql"SELECT user_id, name FROM users".query[User].to[Seq]
+         .transact(db.transactor)
+     }
+
+     override def save(user: User): P[Unit] =
+       sql"INSERT INTO users(user_id, name) VALUES (${user.id}, ${user.name})".update.run
+         .transact(db.transactor)
+         .map(_ => ())
+   }
+
 }
 
 /**
@@ -66,15 +85,20 @@ object BaseInstancesII {
 object DerivedInstancesIII {
   import cats.Id, cats.effect.IO, cats.~>
 
-  // implicit def fromIdToFuture(implicit ec: ExecutionContext): Id ~> Future = new (Id ~> Future){
-  //   def apply[T](a: Id[T]): Future[T] =
-  //     Future(a)
-  // }
+   implicit def fromIdToFuture(implicit ec: ExecutionContext): Id ~> Future = new (Id ~> Future){
+     def apply[T](a: Id[T]): Future[T] =
+       Future(a)
+   }
 
   implicit val fromIdToIO: Id ~> IO = new (Id ~> IO) {
     def apply[T](a: Id[T]): IO[T] =
       IO(a)
   }
+
+//  implicit val fromIdToIoTomy: Id ~> IO = new (Id ~> IO) {
+//    def apply[T](a: Id[T]): IO[T] =
+//      IO(a)
+//  }
 
 }
 
@@ -91,7 +115,9 @@ object InyentadoDependenciasIII {
   import BaseInstancesII.DoobieMySqlUserRepository
   import scala.concurrent.{ExecutionContext, Future}
 
-  import DerivedInstancesII._, DerivedInstancesIII._
+  //import DerivedInstancesII._, DerivedInstancesIII._
+  import DerivedInstancesII.messagePublisherTrans
+  import DerivedInstancesIII.fromIdToFuture
 
   // def userRegisterDoobieRabbitMQFuture(implicit
   //   doobieCon: DoobieDbConnection,
@@ -102,17 +128,26 @@ object InyentadoDependenciasIII {
   //     DoobieMySqlUserRepository(),
   //     RabbitMqInstance)
 
-  // def userRegisterDoobieRabbitMQFuture(implicit
-  //   doobieCon: DoobieDbConnection[Future],
-  //   busConfig: RabbitMqConfig,
-  //   ec: ExecutionContext
-  // ): UserRegisterRepoPublisher[Future] =
-  //   UserRegisterRepoPublisher[Future](
-  //     DoobieMySqlUserRepository[Future](),
-  //     RabbitMqInstance)
+   def userRegisterDoobieRabbitMQFuture(implicit
+     doobieCon: DoobieDbConnection[Future],
+     busConfig: RabbitMqConfig,
+     ec: ExecutionContext
+   ): UserRegisterRepoPublisher[Future] =
+     UserRegisterRepoPublisher[Future](
+       DoobieMySqlUserRepository[Future](),
+       RabbitMqInstance)
 
   def userRegisterDoobieRabbitMQIO(implicit
                                    doobieCon: DoobieDbConnection[IO],
                                    busConfig: RabbitMqConfig): UserRegisterRepoPublisher[IO] =
     UserRegisterRepoPublisher[IO](DoobieMySqlUserRepository[IO](), RabbitMqInstance)
+
+  def userRegisterDoobieRabbitMQIOTomy(implicit
+    doobieCon: DoobieDbConnection[IO],
+    busConfig: RabbitMqConfig,
+    ec: ExecutionContext
+  ): UserRegisterRepoPublisher[IO] =
+    UserRegisterRepoPublisher[IO](
+      DoobieMySqlUserRepository[IO](),
+      RabbitMqInstance)
 }

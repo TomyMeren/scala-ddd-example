@@ -4,10 +4,13 @@ package recording.code
 import application.user.api.{User, UserId, UserName}
 import effects.bus.api.Message
 
+import scala.concurrent.Future
+
 /**
   * 1. APIs como interfaces abstractas convencionales
   */
 object ConventionalAPIs {
+  n
 
   // Implementación asíncrona para los Futures de Scala
 
@@ -40,17 +43,17 @@ object ConventionalAPIs {
 
   // Otras APIs
 
-  type MessagePublisher = MessagePublisherVoid
-
   trait MessagePublisherVoid {
     def publish(message: Message): Unit
   }
 
-  type UserRegister = UserRegisterAsync
+  type MessagePublisher = MessagePublisherVoid
 
   trait UserRegisterAsync {
     def register(id: UserId, name: UserName): Future[Unit]
   }
+
+  type UserRegister = UserRegisterAsync
 }
 
 /**
@@ -58,27 +61,14 @@ object ConventionalAPIs {
   */
 object FunctionalAPIs {
 
-  // trait UserRepositoryAsyncScala{
-  //   def all(): Future[Seq[User]]
-  //   def save(user: User): Future[Unit]
-  // }
-
   trait UserRepository[P[_]] {
     def all(): P[Seq[User]]
     def save(user: User): P[Unit]
   }
 
-  // trait UserRegisterAsync{
-  //   def register(id: UserId, name: UserName): Future[Unit]
-  // }
-
   trait UserRegister[P[_]] {
     def register(id: UserId, name: UserName): P[Unit]
   }
-
-  // trait MessagePublisherVoid{
-  //   def publish(message: Message): Unit
-  // }
 
   trait MessagePublisher[P[_]] {
     def publish(message: Message): P[Unit]
@@ -120,23 +110,30 @@ object Refactoring {
 
   case class UserState(users: List[User])
 
-  // trait UserRepositoryAsyncCats{
+  // trait UserRepository{
   //   def all(): UserState => (UserState, Seq[User])
   //   def save(user: User): UserState => (UserState, Unit)
   // }
 
-  type UserStateTransformer[T] = UserState => (UserState, T)
+//  trait UserRepositoryTomy[P[_]] {
+//    def all(): P[Seq[User]]
+//    def save(user: User): P[Unit]
+//  }
 
-  type UserRepositoryPureUnitTesting = UserRepository[UserStateTransformer]
+  type Action[T]            = UserState => (UserState, T)
+  type UserStateTransformer = UserRepository[Action]
 
   // trait MessagePublisherVoid{
   //   def publish(message: Message): Unit
   // }
 
-  type Id[T] = T
+//  trait MessagePublisherTomy[P[_]] {
+//    def publish(message: Message): P[Unit]
+//  }
+
+  type Id[Unit] = Unit
 
   type MessagePublisherVoid = MessagePublisher[Id]
-
 }
 
 /**
@@ -147,26 +144,12 @@ object Instances {
   import doobie.implicits._
   import effects.repositories.doobie.TypesConversions._
   import scala.concurrent.{ExecutionContext, Future}
+
   type DoobieDbConnection = effects.repositories.doobie.DoobieDbConnection[Future]
   import cats.implicits._
 
-  // import ConventionalAPIs.UserRepository
-
-  // final class DoobieMySqlUserRepository(
-  //   db: DoobieDbConnection)(implicit
-  //   executionContext: ExecutionContext) extends UserRepository {
-
-  //   override def all(): Future[Seq[User]] = {
-  //     db.read(sql"SELECT user_id, name FROM users".query[User].to[Seq])
-  //   }
-
-  //   override def save(user: User): Future[Unit] =
-  //     sql"INSERT INTO users(user_id, name) VALUES (${user.id}, ${user.name})".update.run
-  //       .transact(db.transactor)
-  //       .map(_ => ())
-  // }
-
   import FunctionalAPIs.UserRepository
+  //import ConventionalAPIs.UserRepository
 
   final class DoobieMySqlUserRepository(db: DoobieDbConnection)(implicit
                                                                 executionContext: ExecutionContext)
@@ -182,4 +165,19 @@ object Instances {
         .map(_ => ())
   }
 
+  /* import FunctionalAPIs.UserRepository
+
+   final class DoobieMySqlUserRepository(db: DoobieDbConnection)(implicit
+                                                                 executionContext: ExecutionContext)
+       extends UserRepository[Future] {
+
+     override def all(): Future[Seq[User]] = {
+       db.read(sql"SELECT user_id, name FROM users".query[User].to[Seq])
+     }
+
+     override def save(user: User): Future[Unit] =
+       sql"INSERT INTO users(user_id, name) VALUES (${user.id}, ${user.name})".update.run
+         .transact(db.transactor)
+         .map(_ => ())
+}*/
 }
