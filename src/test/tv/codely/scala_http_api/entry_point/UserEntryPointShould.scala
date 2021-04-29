@@ -4,8 +4,8 @@ import akka.http.scaladsl.model._
 import doobie.implicits._
 import org.scalatest.BeforeAndAfterEach
 import spray.json._
-import tv.codely.scala_http_api.module.user.domain.UserStub
-import tv.codely.scala_http_api.module.user.infrastructure.marshaller.UserJsValueMarshaller
+import tv.codely.scala_http_api.services.akkaHttp.marshaller.UserJsValueMarshaller
+import tv.codely.scala_http_api.services.stubs.user.UserStub
 
 final class UserEntryPointShould extends AcceptanceSpec with BeforeAndAfterEach {
   private def cleanUsersTable() =
@@ -34,7 +34,7 @@ final class UserEntryPointShould extends AcceptanceSpec with BeforeAndAfterEach 
   "return all the users" in {
     val users = UserStub.randomSeq
 
-    users.foreach(u => userDependencies.repository.save(u).futureValue)
+    users.foreach(u => UserRepo.save(u).unsafeToFuture) //Todo:??
 
     getting("/users") {
       status shouldBe StatusCodes.OK

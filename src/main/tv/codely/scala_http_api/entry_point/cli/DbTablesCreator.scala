@@ -2,9 +2,8 @@ package tv.codely.scala_http_api.entry_point.cli
 
 import java.io.File
 import java.sql.{Connection, DriverManager}
-
 import com.typesafe.config.ConfigFactory
-import tv.codely.scala_http_api.module.shared.infrastructure.config.DbConfig
+import tv.codely.scala_http_api.effects.repositories.bbdd.api.JdbcConfig
 
 import scala.io.Source._
 import scala.util.Try
@@ -40,7 +39,7 @@ object DbTablesCreator {
     }
 
     parser.parse(args, CommandConfig()).fold(println("[ERROR] Invalid parameters")) { commandConfig =>
-      val dbConfig     = DbConfig(ConfigFactory.load("application").getConfig("database"))
+      val dbConfig     = JdbcConfig(ConfigFactory.load("application").getConfig("database"))
       val dbNameOption = for (grouped <- databaseNameFromUrlRegex findFirstMatchIn dbConfig.url) yield grouped group 1
 
       dbNameOption.fold(

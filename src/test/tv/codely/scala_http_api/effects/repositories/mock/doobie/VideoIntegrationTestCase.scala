@@ -1,7 +1,9 @@
 package tv.codely.scala_http_api.effects.repositories.mock.doobie
 
-protected[video] trait VideoIntegrationTestCase extends IntegrationTestCase {
-  private val container = new VideoModuleDependencyContainer(doobieDbConnection, messagePublisher)
+import cats.effect.IO
+import tv.codely.scala_http_api.effects.repositories.api.VideoRepository
+import tv.codely.scala_http_api.effects.repositories.bbdd.doobie.DoobieMySqlVideoRepository
 
-  protected val repository: VideoRepository = container.repository
+trait VideoIntegrationTestCase extends IntegrationTestCase {
+  protected val repository: VideoRepository[IO] = DoobieMySqlVideoRepository[IO]
 }

@@ -1,10 +1,9 @@
-package tv.codely.scala_http_api.module.shared.infrastructure.logger.scala_logging
-
-import java.io.{File, PrintWriter, StringWriter}
+package tv.codely.scala_http_api.effects.logger.scala_logging
 
 import spray.json._
-import tv.codely.scala_http_api.module.IntegrationTestCase
+import tv.codely.scala_http_api.effects.repositories.mock.doobie.IntegrationTestCase
 
+import java.io.{File, PrintWriter, StringWriter}
 import scala.io.Source
 
 final class ScalaLoggingLoggerShould extends IntegrationTestCase {

@@ -2,6 +2,7 @@ package tv.codely.scala_http_api.effects.repositories.bbdd.doobie
 
 import cats.Monad
 import cats.syntax.functor._
+import doobie.ConnectionIO
 import doobie.implicits._
 import tv.codely.scala_http_api.application.user.api.User
 import tv.codely.scala_http_api.effects.repositories.api.UserRepository
@@ -9,7 +10,7 @@ import tv.codely.scala_http_api.effects.repositories.bbdd.doobie.TypesConversion
 
 final case class DoobieMySqlUserRepository[P[_]]()(implicit db: DoobieDbConnection[P], M: Monad[P]) extends UserRepository[P] {
   override def all(): P[Seq[User]] = {
-    db.read(sql"SELECT user_id, name FROM users".query[User].to[Seq])
+    db.read(sql"SELECT user_id, name FROM users".query[User].to[Seq]:ConnectionIO[Seq[User]])
       //.transact(db.transactor)
   }
 

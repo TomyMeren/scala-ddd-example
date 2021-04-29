@@ -1,8 +1,8 @@
-package tv.codely.scala_http_api.module.shared.infrastructure.logger.scala_logging
+package tv.codely.scala_http_api.effects.logger.scala_logging
 
 import com.typesafe.scalalogging.{Logger => ScalaLogging}
 import org.slf4j.MDC
-import tv.codely.scala_http_api.module.shared.domain.Logger
+import tv.codely.scala_http_api.effects.logger.api.Logger
 
 final class ScalaLoggingLogger extends Logger {
   private val logger = ScalaLogging(name = "codelytv_scala_api")

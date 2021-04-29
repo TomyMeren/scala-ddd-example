@@ -1,12 +1,12 @@
-package tv.codely.scala_http_api.module.shared.infrastructure.message_broker.rabbitmq
+package tv.codely.scala_http_api.effects.bus.rabbit_mq
 
 import cats.Id
-import com.rabbitmq.client.MessageProperties
-import tv.codely.scala_http_api.module.shared.domain.{Message, MessagePublisher}
+import com.rabbitmq.client.{Channel, MessageProperties}
 import tv.codely.scala_http_api.application.system.akkaHttp.marshaller.MessageJsonFormatMarshaller.MessageMarshaller
+import tv.codely.scala_http_api.effects.bus.api.{Message, MessagePublisher}
 
-final class RabbitMqMessagePublisher(channelFactory: RabbitMqChannelFactory) extends MessagePublisher[Id] {
-  private val channel = channelFactory.channel
+final class RabbitMqMessagePublisher(channel: Channel) extends MessagePublisher[Id] {
+  //private val channel = channelFactory.channel
 
   // Use the default nameless exchange in order to route the published messages based on
   // the mapping between the message routing key and the queue names.
@@ -34,4 +34,9 @@ final class RabbitMqMessagePublisher(channelFactory: RabbitMqChannelFactory) ext
 
     channel.basicPublish(exchange, routingKey, persistToDisk, messageBytes)
   }
+}
+
+object RabbitMqMessagePublisher {
+  def apply(config:RabbitMqConfig):RabbitMqMessagePublisher =
+    new RabbitMqMessagePublisher(new RabbitMqChannelFactory(config).channel)
 }

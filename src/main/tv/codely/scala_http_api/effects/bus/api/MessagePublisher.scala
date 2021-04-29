@@ -1,4 +1,4 @@
-package tv.codely.scala_http_api.module.shared.domain
+package tv.codely.scala_http_api.effects.bus.api
 
 import cats.~>
 
@@ -8,17 +8,18 @@ trait MessagePublisher[P[_]] {
 
 
 object MessagePublisher {
-  /*  implicit def fromIdToFutureMp(mp: MessagePublisher[Id])(implicit ec :ExecutionContext): MessagePublisher[Future] = {
-      new MessagePublisher[Future] {
-        def publish(message:Message):Future[Unit] = Future(mp.publish(message))
-      }
-    }*/
 
-  implicit def fromToMp[P[_], Q[_]](mp: MessagePublisher[P])(implicit Q: P ~> Q): MessagePublisher[Q] = {
+  implicit def fromToMp[P[_], Q[_]](implicit mp: MessagePublisher[P], Q: P ~> Q): MessagePublisher[Q] = {
     new MessagePublisher[Q] {
       def publish(message: Message): Q[Unit] = Q(mp.publish(message))
     }
   }
+
+  //necesario para test
+  implicit def toQView[P[_], Q[_]](P: MessagePublisher[P])(
+    implicit
+    nat: P ~> Q
+  ): MessagePublisher[Q] = fromToMp(P, nat)
 
 
 }

@@ -1,7 +1,10 @@
 package tv.codely.scala_http_api.effects.repositories.mock.doobie
 
-protected[user] trait UserIntegrationTestCase extends IntegrationTestCase {
-  private val container = new UserModuleDependencyContainer(doobieDbConnection, messagePublisher)
+import cats.effect.IO
+import tv.codely.scala_http_api.effects.repositories.api.UserRepository
+import tv.codely.scala_http_api.effects.repositories.bbdd.doobie.DoobieMySqlUserRepository
 
-  protected val repository: UserRepository = container.repository
+trait UserIntegrationTestCase extends IntegrationTestCase {
+
+  protected val repository: UserRepository[IO] = DoobieMySqlUserRepository[IO]
 }

@@ -27,3 +27,12 @@ addCommandAlias("prep", ";c;tc;fc;tfc")
 TaskKey[Unit]("createDbTables") := (runMain in Compile)
   .toTask(" tv.codely.scala_http_api.entry_point.cli.DbTablesCreator")
   .value
+
+TaskKey[Unit]("scalaHttpApi") := (runMain in Compile)
+  .toTask(" tv.codely.scala_http_api.entry_point.ScalaHttpApi")
+  .value
+
+TaskKey[Unit]("http4sMain") := (runMain in Compile)
+  .toTask(" tv.codely.scala_http_api.entry_point.Http4sEntryPoint")
+  .value
+

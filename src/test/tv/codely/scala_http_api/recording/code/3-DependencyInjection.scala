@@ -14,8 +14,8 @@ object BaseInstances {
    */
   import scala.concurrent.{ExecutionContext, Future}
   import doobie.implicits._
-  import effects.repositories.doobie.TypesConversions._
-  type DoobieDbConnection = effects.repositories.doobie.DoobieDbConnection[Future]
+  import effects.repositories.bbdd.doobie.TypesConversions._
+  type DoobieDbConnection = effects.repositories.bbdd.doobie.DoobieDbConnection[Future]
   import cats.implicits._
   import FunctionalAPIs.UserRepository
 
@@ -73,14 +73,14 @@ object InyentadoDependenciasI {
 
   // ¡No compila! :(
 
-  // def userRegisterDoobieRabbitMQFuture(implicit
-  //   doobieCon: DoobieDbConnection,
-  //   busConfig: RabbitMqConfig,
-  //   ec: ExecutionContext
-  // ): UserRegisterRepoPublisher[Future] =
-  //   UserRegisterRepoPublisher[Future](
-  //     DoobieMySqlUserRepository(),
-  //     RabbitMqInstance)
+/*   def userRegisterDoobieRabbitMQFuture(implicit
+     doobieCon: DoobieDbConnection,
+     busConfig: RabbitMqConfig,
+     ec: ExecutionContext
+   ): UserRegisterRepoPublisher[Future] =
+     UserRegisterRepoPublisher[Future](
+       DoobieMySqlUserRepository(),
+       RabbitMqInstance)*/
 }
 
 /**

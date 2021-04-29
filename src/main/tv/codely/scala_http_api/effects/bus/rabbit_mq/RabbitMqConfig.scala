@@ -1,9 +1,9 @@
-package tv.codely.scala_http_api.module.shared.infrastructure.config
+package tv.codely.scala_http_api.effects.bus.rabbit_mq
 
 import com.typesafe.config.Config
 
-object MessageBrokerConfig {
-  def apply(config: Config): MessageBrokerConfig = MessageBrokerConfig(
+object RabbitMqConfig {
+  def apply(config: Config): RabbitMqConfig = RabbitMqConfig(
     host = config.getString("host"),
     port = config.getInt("port"),
     user = config.getString("user"),
@@ -11,4 +11,4 @@ object MessageBrokerConfig {
   )
 }
 
-final case class MessageBrokerConfig(host: String, port: Int, user: String, password: String)
+final case class RabbitMqConfig(host: String, port: Int, user: String, password: String)

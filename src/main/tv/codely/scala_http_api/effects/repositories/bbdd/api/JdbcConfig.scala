@@ -1,4 +1,4 @@
-package tv.codely.scala_http_api.effects.repositories.bbdd
+package tv.codely.scala_http_api.effects.repositories.bbdd.api
 
 import com.typesafe.config.Config
 

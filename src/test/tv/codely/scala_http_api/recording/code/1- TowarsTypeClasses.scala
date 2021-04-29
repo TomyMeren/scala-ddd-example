@@ -145,9 +145,10 @@ object Refactoring {
 object Instances {
 
   import doobie.implicits._
-  import effects.repositories.doobie.TypesConversions._
+  import effects.repositories.bbdd.doobie.TypesConversions._
   import scala.concurrent.{ExecutionContext, Future}
-  type DoobieDbConnection = effects.repositories.doobie.DoobieDbConnection[Future]
+
+  type DoobieDbConnection = effects.repositories.bbdd.doobie.DoobieDbConnection[Future]
   import cats.implicits._
 
   // import ConventionalAPIs.UserRepository

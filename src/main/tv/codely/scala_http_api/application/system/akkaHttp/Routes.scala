@@ -5,22 +5,34 @@ import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 import spray.json.DefaultJsonProtocol._
 import spray.json.JsValue
-import tv.codely.scala_http_api.entry_point.EntryPointDependencyContainer
+import tv.codely.scala_http_api.application.system.api.System
+import tv.codely.scala_http_api.application.user.akkaHttp.{UserGetController, UserPostController}
+import tv.codely.scala_http_api.application.video.akkaHttp.{VideoGetController, VideoPostController}
 
+import scala.concurrent.{ExecutionContext, Future}
 import scala.concurrent.duration._
 
-final class Routes(container: EntryPointDependencyContainer) {
+final class Routes(implicit system:System[Future],executionContext: ExecutionContext) {
+
+  val statusGetController = new StatusGetController
+
+  val userGetController  = new UserGetController(system.usersSearcher)
+  val userPostController = new UserPostController(system.userRegistrar)
+
+  val videoGetController  = new VideoGetController(system.videosSearcher)
+  val videoPostController = new VideoPostController(system.videoCreator)
+
   private val status = get {
-    path("status")(container.statusGetController.get())
+    path("status")(statusGetController.get())
   }
 
   private val user = get {
-    path("users")(container.userGetController.get())
+    path("users")(userGetController.get())
   } ~
     post {
       path("users") {
         jsonBody { body =>
-          container.userPostController.post(
+          userPostController.post(
             body("id").convertTo[String],
             body("name").convertTo[String]
           )
@@ -29,12 +41,12 @@ final class Routes(container: EntryPointDependencyContainer) {
     }
 
   private val video = get {
-    path("videos")(container.videoGetController.get())
+    path("videos")(videoGetController.get())
   } ~
     post {
       path("videos") {
         jsonBody { body =>
-          container.videoPostController.post(
+          videoPostController.post(
             body("id").convertTo[String],
             body("title").convertTo[String],
             body("duration_in_seconds").convertTo[Int].seconds,

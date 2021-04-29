@@ -1,4 +1,4 @@
-package tv.codely.scala_http_api.module.user.domain
+package tv.codely.scala_http_api.effects.repositories.api
 
 import tv.codely.scala_http_api.application.user.api.User
 
@@ -20,3 +20,4 @@ object UserRepository {
     def save(user: User): Q[Unit] = nat(P.save(user))
   }
 }
+

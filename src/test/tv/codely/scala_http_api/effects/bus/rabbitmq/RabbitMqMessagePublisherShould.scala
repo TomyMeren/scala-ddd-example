@@ -1,8 +1,8 @@
-package tv.codely.scala_http_api.module.shared.infrastructure.message_broker.rabbitmq
+package tv.codely.scala_http_api.effects.bus.rabbitmq
 
 import org.scalatest.concurrent.Eventually
-import tv.codely.scala_http_api.module.IntegrationTestCase
-import tv.codely.scala_http_api.module.shared.domain.Message
+import tv.codely.scala_http_api.effects.bus.api.Message
+import tv.codely.scala_http_api.effects.repositories.mock.doobie.IntegrationTestCase
 import tv.codely.scala_http_api.services.stubs.video.VideoCreatedStub
 
 import scala.collection.mutable

@@ -1,55 +1,46 @@
-package tv.codely.scala_http_api.entry_point
+package tv.codely
+package scala_http_api
+package entry_point
 
 import akka.actor.ActorSystem
-import akka.http.scaladsl.Http
-import akka.stream.ActorMaterializer
-import com.typesafe.config.ConfigFactory
-import tv.codely.scala_http_api.module.shared.infrastructure.config.{DbConfig, MessageBrokerConfig}
-import tv.codely.scala_http_api.module.shared.infrastructure.dependency_injection.SharedModuleDependencyContainer
-import tv.codely.scala_http_api.module.user.infrastructure.dependency_injection.UserModuleDependencyContainer
-import tv.codely.scala_http_api.module.video.infrastructure.dependency_injection.VideoModuleDependencyContainer
 
-import scala.concurrent.ExecutionContext
-import scala.io.StdIn
+import com.typesafe.config.ConfigFactory
+import tv.codely.scala_http_api.application.system.akkaHttp.{HttpServerConfig, SystemController}
+import tv.codely.scala_http_api.application.system.repo_publisher.SystemRepoPublisher
+import tv.codely.scala_http_api.effects.bus.rabbit_mq.{RabbitMqConfig, RabbitMqMessagePublisher}
+import scala.concurrent.Future
+import cats.instances.future._
+import tv.codely.scala_http_api.effects.repositories.api.{UserRepository, VideoRepository}
+import tv.codely.scala_http_api.effects.repositories.bbdd.slick.{SlickDbConnection, SlickMySqlUserRepository, SlickMySqlVideoRepository}
+
+//import tv.codely.scala_http_api.effects.repositories.bbdd.JdbcConfig
+//import tv.codely.scala_http_api.effects.repositories.bbdd.doobie.{DoobieDbConnection, DoobieMySqlUserRepository, DoobieMySqlVideoRepository}
+//import cats.effect.IO
 
 object ScalaHttpApi {
   def main(args: Array[String]): Unit = {
     val appConfig    = ConfigFactory.load("application")
-    val serverConfig = ConfigFactory.load("http-server")
-
+    val httpServerConfig = HttpServerConfig(ConfigFactory.load("http-server"))
+    //val dbConfig        = JdbcConfig(appConfig.getConfig("database"))
+    val publisherConfig = RabbitMqConfig(appConfig.getConfig("message-publisher"))
     val actorSystemName = appConfig.getString("main-actor-system.name")
-    val host            = serverConfig.getString("http-server.host")
-    val port            = serverConfig.getInt("http-server.port")
 
-    val dbConfig        = DbConfig(appConfig.getConfig("database"))
-    val publisherConfig = MessageBrokerConfig(appConfig.getConfig("message-publisher"))
+    implicit val actorSystem = ActorSystem(actorSystemName)
+    implicit val executionContext     = actorSystem.dispatcher
 
-    val sharedDependencies = new SharedModuleDependencyContainer(actorSystemName, dbConfig, publisherConfig)
+    /*implicit val doobieDbConnection = new DoobieDbConnection[IO](dbConfig)
+    implicit val UserRepo = DoobieMySqlUserRepository[IO]
+    implicit val VideoRepo = DoobieMySqlVideoRepository[IO]*/
 
-    implicit val system: ActorSystem                = sharedDependencies.actorSystem
-    implicit val materializer: ActorMaterializer    = sharedDependencies.materializer
-    implicit val executionContext: ExecutionContext = sharedDependencies.executionContext
+    implicit val slickConnetion:SlickDbConnection = new SlickDbConnection
+    implicit val UserRepo:UserRepository[Future] = SlickMySqlUserRepository()
+    implicit val VideoRepo:VideoRepository[Future] = SlickMySqlVideoRepository()
 
-    val container = new EntryPointDependencyContainer(
-      new UserModuleDependencyContainer(sharedDependencies.doobieDbConnection, sharedDependencies.messagePublisher),
-      new VideoModuleDependencyContainer(sharedDependencies.doobieDbConnection, sharedDependencies.messagePublisher)
-    )
+    implicit val rabbitMqPublisher= RabbitMqMessagePublisher(publisherConfig)
+    implicit val systemRepoPublisher = SystemRepoPublisher[Future]
 
-    val routes = new Routes(container)
+    val akkaHttpSystem = SystemController()
 
-    val bindingFuture = Http().bindAndHandle(routes.all, host, port)
-
-    bindingFuture.failed.foreach { t =>
-      println(s"Failed to bind to http://$host:$port/:")
-      pprint.log(t)
-    }
-
-    // let it run until user presses return
-    println(s"Server online at http://$host:$port/\nPress RETURN to stop...")
-    StdIn.readLine()
-
-    bindingFuture
-      .flatMap(_.unbind())
-      .onComplete(_ => sharedDependencies.actorSystem.terminate())
+    akkaHttpSystem.run(httpServerConfig)
   }
 }
